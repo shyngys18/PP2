@@ -10,15 +10,15 @@ namespace Task3
     {
         static void Main(string[] args)
         {
-            int n = int.Parse(Console.ReadLine());
-            int[] a = new int[n];
-            for (int i = 0; i < n; i++)
+            int n = int.Parse(Console.ReadLine());// reading the array size
+            int[] a = new int[n];//creater array
+            for (int i = 0; i < n; i++)//reading the array integers
             {
                 a[i] = int.Parse(Console.ReadLine());
             }
             for(int i = 0; i < n; i++)
             {
-                Console.Write(a[i].ToString() + " " + a[i].ToString() + " ");
+                Console.Write(a[i].ToString() + " " + a[i].ToString() + " ");//convert a[i] to string twice and spaces between them
             }
 
 
