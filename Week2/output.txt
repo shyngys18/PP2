@@ -1,0 +1,4 @@
+ababa Yes
+abaca No
+almata No
+ala Yes
