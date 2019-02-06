@@ -12,9 +12,9 @@ namespace Task1
         static void Main(string[] args)
         {
             string text;
-            FileStream fs = new FileStream(@"C:\Users\Shyngys\Desktop\Week1\Week2\input.txt",FileMode.Open,FileAccess.Read);
+            FileStream fs = new FileStream(@"C:\Users\Shyngys\Desktop\Week1\Week2\Task1\input.txt", FileMode.Open,FileAccess.Read);
             StreamReader input = new StreamReader(fs);
-            FileStream fs2 = new FileStream(@"C:\Users\Shyngys\Desktop\Week1\Week2\output.txt", FileMode.Open, FileAccess.Write);
+            FileStream fs2 = new FileStream(@"C:\Users\Shyngys\Desktop\Week1\Week2\Task1\output.txt", FileMode.Open, FileAccess.Write);
             StreamWriter output = new StreamWriter(fs2);
 
 
