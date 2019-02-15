@@ -18,6 +18,7 @@ namespace Task4
                     Console.Write("[*]"); // printing a block
                 }
                 Console.WriteLine(); // moving to the next line(row) in console
+
             }
         }
     }

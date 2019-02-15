@@ -10,7 +10,7 @@ namespace Task1
     {
         static void Main(string[] args)
         {
-            int n = int.Parse(Console.ReadLine()); // reading the array size
+            int n = int.Parse(Console.ReadLine()); // reading the array size 
             int[] a = new int[n]; // create an array with n elements
             for (int i = 0; i < n; i++)
             {
@@ -23,7 +23,7 @@ namespace Task1
                     pr.Add(a[i]); // add a[i] to the back of pr
             }
             Console.WriteLine(pr.Count); // print the size of prime numbers subset
-            foreach (var x in pr) // print primes
+            foreach(var x in pr) // print primes
                 Console.Write(x.ToString() + " "); // convert integers to the strings and print them with spaces
         }
         static bool isPrime(int x)
