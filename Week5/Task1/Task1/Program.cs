@@ -6,52 +6,39 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace Example4
+namespace Task1
 {
     public class Complex
     {
         public double a;
         public double b;
-        XmlSerializer xs = new XmlSerializer(typeof(Complex));
-        string fname = "complex.xml";
-        public void PrintInfo()
-        {
-            Console.WriteLine(string.Format("{0} + {1} * i", a, b));
-        }
 
-        public override string ToString()
+        public Complex(double a1, double b1)
         {
-            return string.Format("{0} + {1}i", a, b);
+            a = a1;
+            b = b1;
         }
-
-        public void Serialize()
+        public Complex()
         {
-            FileStream fs = new FileStream(fname, FileMode.Create, FileAccess.Write);
-            xs.Serialize(fs, this);
-            fs.Close();
-        }
 
-        public Complex Deserialize()
-        {
-            FileStream fs = new FileStream(fname, FileMode.Open, FileAccess.Read);
-            Complex complex = xs.Deserialize(fs) as Complex;
-            fs.Close();
-            return complex;
         }
     }
-
     class Program
     {
         static void Main(string[] args)
-        {
-            Complex c = new Complex();
-            c.a = 2;
-            c.b = 3;
-            c.PrintInfo();
-            c.Serialize();
-
-            Complex c2 = c.Deserialize();
-            Console.WriteLine(c2);
+        {        //Serialize
+            Complex complex = new Complex(2, 3);
+            XmlSerializer xs = new XmlSerializer(typeof(Complex));
+            using (FileStream fs = new FileStream("complex.xml", FileMode.OpenOrCreate, FileAccess.Write))
+            {
+                xs.Serialize(fs, complex);
+            }
+            //Deserialize
+            using (FileStream fs = new FileStream("complex.xml", FileMode.OpenOrCreate, FileAccess.Read))
+            {
+                Complex complex2 = xs.Deserialize(fs) as Complex;
+                Console.WriteLine("{0}+{1}*i", complex2.a, complex2.b);//okay
+            }
         }
     }
 }
